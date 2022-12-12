@@ -1,6 +1,6 @@
 const App = require("../src/App");
 const MissionUtils = require("@woowacourse/mission-utils");
-const Lotto = require("../src/Lotto");
+const Lotto = require("../src/model/Lotto");
 const {
   validateBonus,
   validateMoney,

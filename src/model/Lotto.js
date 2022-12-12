@@ -1,11 +1,16 @@
-const { validateLotto } = require('./functionValidation')
+const { validateLotto } = require('../functionValidation')
 
 class Lotto {
     #numbers
 
     constructor(numbers) {
         validateLotto(numbers)
-        this.#numbers = this.lottoNumberSort(numbers)
+        this.#numbers = numbers
+    }
+
+    getLottoSortedNumbers(){
+        const sorted = this.lottoNumberSort(this.#numbers)
+        return sorted
     }
 
     lottoNumberSort(numbers) {
@@ -14,10 +19,6 @@ class Lotto {
         }
 
         return numbers.sort(compareNumbers)
-    }
-
-    getNumbers() {
-        return this.#numbers
     }
     // TODO: 추가 기능 구현
 }

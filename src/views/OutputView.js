@@ -11,18 +11,17 @@ const {
     PROFIC_PERCENT,
     THE_NUMBER_OF,
 } = require('../utils/constants')
-class View {
-    constructor() {}
+const OutputView = {
 
     lottoCountPrint(number) {
         MissionUtils.Console.print(number + PURCHASE_LOTTO)
-    }
+    },
 
     lottoNumberPrint(numbers) {
         MissionUtils.Console.print('[' + numbers.join(', ') + ']')
-    }
+    },
 
-    winningStatistics(rank, rateOfReturn) {
+    winningStatistics(rank) {
         MissionUtils.Console.print(WINNING_STATICS)
         MissionUtils.Console.print(THREE_MATCHED + rank[3] + THE_NUMBER_OF)
         MissionUtils.Console.print(FOUR_MATCHED + rank[2] + THE_NUMBER_OF)
@@ -31,8 +30,11 @@ class View {
             FIVE_WITH_BONUS_MATCHED + rank[4] + THE_NUMBER_OF
         )
         MissionUtils.Console.print(SIX_MATCHED + rank[0] + THE_NUMBER_OF)
+    },
+
+    rateOfReturnPrint(rateOfReturn){
         MissionUtils.Console.print(TOTAL_PROFIT + rateOfReturn + PROFIC_PERCENT)
     }
 }
 
-module.exports = View
+module.exports = OutputView
